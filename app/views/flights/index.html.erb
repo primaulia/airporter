@@ -1,0 +1,19 @@
+<%= render "partials/hero"%>
+
+<section id="all-flight" class="section">
+  <div class="container">
+    <div class="columns">
+      <% @all_flights.each do |flight| %>
+      <div class="column">
+        <p class="notification is-info">
+          From: <%= flight.from %><br>
+          To: <%= flight.to %><br>
+          Airline: <%= flight.airline %><br>
+          #Passengers: <%= flight.num_passenger %><br><br>
+          <a class="button is-info is-inverted">View</a>
+        </p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

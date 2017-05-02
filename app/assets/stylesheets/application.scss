@@ -1,0 +1,28 @@
+@import "variables";
+@import "bulma";
+@import "font-awesome";
+
+body {
+  font: 100% $body-font-type;
+  color: $grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-type;
+}
+
+.footer {
+  li {
+    font-size: 30px;
+    transition: all 3s;
+
+    &:hover {
+      font-weight: bold;
+      font-size: 10 + 20px;
+    }
+
+    &.important {
+      font-style: italic;
+    }
+  }
+}
