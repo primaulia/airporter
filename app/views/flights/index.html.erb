@@ -10,7 +10,10 @@
           To: <%= flight.to %><br>
           Airline: <%= flight.airline %><br>
           #Passengers: <%= flight.num_passenger %><br><br>
-          <a class="button is-info is-inverted">View</a>
+
+
+          <%= link_to "View Flight", flight_path(flight), class: "button is-info is-inverted" %><br><br>
+          <%= link_to "Edit Flight", edit_flight_path(flight), class: "button is-primary" %>
         </p>
       </div>
       <% end %>

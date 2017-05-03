@@ -30,15 +30,8 @@
   <!-- This "nav-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="nav-right nav-menu">
-    <a class="nav-item">
-      Home
-    </a>
-    <a class="nav-item">
-      Documentation
-    </a>
-    <a class="nav-item">
-      Blog
-    </a>
+    <%= link_to "Home", root_path, class: "nav-item" %>
+    <%= link_to "All Flights", flights_path, class: "nav-item" %>
 
     <div class="nav-item">
       <div class="field is-grouped">
