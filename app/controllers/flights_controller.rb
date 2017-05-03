@@ -11,4 +11,8 @@ class FlightsController < ApplicationController
     gon.flight = Flight.find(params[:id])
     # alert the data into the screen
   end
+
+  def edit
+    @individual_flight = Flight.find(params[:id])
+  end
 end

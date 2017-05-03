@@ -2,9 +2,9 @@
 
 <section id="all-flight" class="section">
   <div class="container">
-    <div class="columns">
+    <div class="columns is-multiline">
       <% @all_flights.each do |flight| %>
-      <div class="column">
+      <div class="column is-one-quarter">
         <p class="notification is-info">
           From: <%= flight.from %><br>
           To: <%= flight.to %><br>
