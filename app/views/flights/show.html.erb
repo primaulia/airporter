@@ -5,9 +5,10 @@
   </h1>
 
   <%= link_to "Edit Flight", edit_flight_path, class: "button is-primary" %>
+  <br>
+  <br>
 
-  <pre>
-    <%= params.inspect %>
-    <%= @individual_flight.inspect %>
-  </pre>
+  <%= form_for @individual_flight, method: :delete do |f| %>
+    <%= f.submit 'Delete Flight', class: 'button is-secondary' %>
+  <% end %>
 </section>
