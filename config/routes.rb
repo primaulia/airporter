@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tests
   get '/homepage' => 'pages#index'
   get '/about' => 'pages#about_page'
   get '/error_page' => 'pages#error_page'
