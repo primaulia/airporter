@@ -56,6 +56,6 @@ class FlightsController < ApplicationController
 
   # filter method called by create and update
   def filter_params
-    params.require(:flight).permit(:from, :to)
+    params.require(:flight).permit(:from, :to, :airline, :num_passenger)
   end
 end
