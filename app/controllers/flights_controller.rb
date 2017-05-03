@@ -15,4 +15,8 @@ class FlightsController < ApplicationController
   def edit
     @individual_flight = Flight.find(params[:id])
   end
+
+  def new
+    @new_flight = Flight.new
+  end
 end
