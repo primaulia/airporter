@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: airporter-rails_production
-  username: airporter-rails
-  password: <%= ENV['AIRPORTER-RAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
