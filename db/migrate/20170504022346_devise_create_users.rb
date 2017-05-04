@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # custom fields
       t.string :name
       t.date :dob
-      t.references :flight, foreign_key: true
+      # t.references :flight, foreign_key: true
 
       ## Recoverable
       t.string   :reset_password_token
