@@ -1,4 +1,6 @@
 class FlightsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @all_flights = Flight.all
     gon.flights = Flight.all

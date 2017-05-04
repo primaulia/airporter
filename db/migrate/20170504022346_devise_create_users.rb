@@ -1,9 +1,15 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
+  # migration file from devise
   def change
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+
+      # custom fields
+      t.string :name
+      t.date :dob
+      t.references :flight, foreign_key: true
 
       ## Recoverable
       t.string   :reset_password_token
