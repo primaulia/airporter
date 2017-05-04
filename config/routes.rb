@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   root 'flights#index'
-  
-  resources :tests
-  get '/homepage' => 'pages#index'
-  get '/about' => 'pages#about_page'
-  get '/error_page' => 'pages#error_page'
-
   resources :flights
-  get 'redirect_page' => 'flights#redirect_page'
+  devise_for :users, path: '/', path_names: {
+    sign_up: 'register',
+    sign_in: 'login',
+    sign_out: 'logout'
+  }
   # resources :<controller_name>
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
