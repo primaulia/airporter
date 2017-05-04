@@ -1,3 +1,3 @@
 class Flight < ApplicationRecord
-  has_many :passengers
+  has_one :user
 end

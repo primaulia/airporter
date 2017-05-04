@@ -1,12 +1,14 @@
-<section id="show-flight" class="section">
-  <h1 class="title">
+<section id='show-flight' class='section'>
+  <h1 class='title'>
     Flight #<%= @individual_flight.id %>:
     <%= @individual_flight.from %> - <%= @individual_flight.to %>
   </h1>
 
-  <%= link_to "Edit Flight", edit_flight_path, class: "button is-primary" %>
-  <%= link_to 'Delete', flight_path(@individual_flight, authenticity_token: form_authenticity_token),
-  class: 'button is-secondary',
-  method: :delete %>
+  <!-- route will post to '/book/:id'  -->
+  <%= link_to 'Book', booking_path, id: @individual_flight.id, class: 'button is-primary', method: :post %>
 
+  <!-- route will post to '/book/:flight_id' -->
+
+  <!-- route will post to '/book' -->
+  <!-- probably gonna use form helper instead  -->
 </section>

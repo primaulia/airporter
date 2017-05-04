@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     sign_in: 'login',
     sign_out: 'logout'
   }
+
+  post '/book/:id', to: 'users#book', as: 'booking'
+
   # resources :<controller_name>
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

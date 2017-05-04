@@ -11,8 +11,33 @@
 
   <body>
     <%= render "partials/nav"%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <% if notice || alert %>
+    <section class="section">
+      <% if notice %>
+        <article class="message is-info">
+          <div class="message-header">
+          <p><strong>Info</strong>!
+          </div>
+          <div class="message-body">
+            <%= notice %>
+          </div>
+        </article>
+      <% end %>
+
+      <% if alert %>
+        <article class="message is-danger">
+          <div class="message-header">
+          <p><strong>Danger</strong>!
+          </div>
+          <div class="message-body">
+            <%= alert %>
+          </div>
+        </article>
+      <% end %>
+    </section>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
