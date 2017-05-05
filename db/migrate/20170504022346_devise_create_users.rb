@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # custom fields
       t.string :name
       t.date :dob
+      t.references :nominator, null: true
       # t.references :flight, foreign_key: true
 
       ## Recoverable
