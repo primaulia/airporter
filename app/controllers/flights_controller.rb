@@ -26,16 +26,17 @@ class FlightsController < ApplicationController
 
   # RECEIVING A POST REQUEST TO CREATE
   def create
-    # @submitted_flight = params[:flight]
-    # Rails Console Way
-    # @saved_flight = Flight.new
-    # @saved_flight.from = @submitted_flight[:from]
-    # @saved_flight.to = @submitted_flight[:to]
-
-    # Mass Assignment Way - can't do this
     @submitted_flight = Flight.new(filter_params)
-    @submitted_flight.save
-    redirect_to flight_path(@submitted_flight)
+    if @submitted_flight.save
+      # ActionCable.server.broadcast(<stream>, <messages>)
+      ActionCable.server.broadcast 'flight_update_channel',
+                                    content: @submitted_flight,
+                                    username: current_user
+
+      redirect_to flights_path
+    end
+
+
   end
 
   # RECEIVING A PUT/PATCH REQUEST TO UPDATE
