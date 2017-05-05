@@ -3,16 +3,16 @@
 
 <section id='all-flight' class='section'>
   <div class='container'>
-    <div class='columns'>
-      <%= link_to 'New Flight', new_flight_path, class: 'button is-primary is-fullwidth' %>
-    </div>
+    <section class="section">
+      <%= render "flights/form", flight_data: @new_flight %>
+    </section>
 
     <div id="flight-list" class='columns is-multiline'>
       <% @all_flights.each do |flight| %>
 
       <!-- Append new flight here -->
 
-      <div class='column is-one-quarter'>
+      <div id="flight<%= flight.id %>" class='column is-one-quarter'>
         <% if flight.users.include? current_user %>
         <div class='card booked'>
         <% else %>

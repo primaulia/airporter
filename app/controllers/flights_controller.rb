@@ -3,6 +3,9 @@ class FlightsController < ApplicationController
 
   def index
     @all_flights = Flight.all
+    #set new flight for form
+    @new_flight = Flight.new
+
     gon.flights = Flight.all
   end
 
@@ -31,9 +34,10 @@ class FlightsController < ApplicationController
       # ActionCable.server.broadcast(<stream>, <messages>)
       ActionCable.server.broadcast 'flight_update_channel',
                                     content: @submitted_flight,
-                                    username: current_user
+                                    user: current_user,
+                                    method: 'create'
 
-      redirect_to flights_path
+      # dont need to redirect_to flights_path anymore
     end
 
 
