@@ -27,6 +27,7 @@
           <% if ! flight.users.include? current_user %>
           <footer class='card-footer'>
             <%= link_to 'View', flight_path(flight), class: 'card-footer-item' %>
+            <%= link_to 'Book', "/book/#{flight.id}", class: "card-footer-item", method: :post %>
           </footer>
           <% end %>
         </div>
